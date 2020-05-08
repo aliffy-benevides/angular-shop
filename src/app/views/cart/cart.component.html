@@ -1,1 +1,36 @@
-<p>cart works!</p>
+<h2>Carrinho</h2>
+<div class="cart" *ngFor="let item of cart">
+    <div class="product">
+        <!-- <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="asfasf"> -->
+        <mat-card class="card mat-elevation-z4">
+            <!-- <img mat-card-image 
+                src="" 
+                alt="Photo of a Shiba Inu"> -->
+            <div class="name">
+                <mat-card-title class="card-title">
+                    <h3>{{ item?.product?.name }}</h3>
+                </mat-card-title>
+                <mat-card-content class="content">
+                    <p>Código: {{ item?.id }}</p>
+                </mat-card-content>
+            </div>
+            <div class="shop">
+                <p class="total-price">
+                    Total: {{ item?.totalPrice | currency: 'BRL' }}
+                </p>
+                <p class="amount">Em estoque: {{ item?.product?.amount }}</p>
+            </div>
+        </mat-card>
+    </div>
+    <!-- <div class="shop">
+        <p class="unit-price">Comprar por: {{ product.price | currency: 'BRL' }}</p>
+        <p class="total-price">
+            Total: {{ totalPrice | currency: 'BRL' }}
+        </p>
+        <p class="amount">Em estoque: {{ product.amount }}</p>
+        <app-add-item [id]="product.id"></app-add-item>
+        <div class="msg {{ messageClass }}">
+            {{ message }}
+        </div>
+    </div> -->
+</div>

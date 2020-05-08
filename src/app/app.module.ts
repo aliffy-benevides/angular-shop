@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+import localePt from '@angular/common/locales/pt'
+import { registerLocaleData } from '@angular/common';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -12,6 +15,11 @@ import { ContentComponent } from './components/template/content/content.componen
 import { ListComponent } from './views/list/list.component';
 import { CartComponent } from './views/cart/cart.component';
 import { DetailComponent } from './views/detail/detail.component';
+import { ProductCardComponent } from './components/product/product-card/product-card.component';
+import { AddItemComponent } from './components/cart/add-item/add-item.component';
+
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -20,15 +28,20 @@ import { DetailComponent } from './views/detail/detail.component';
     ContentComponent,
     ListComponent,
     CartComponent,
-    DetailComponent
+    DetailComponent,
+    ProductCardComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSidenavModule,
-    MatListModule
+    BrowserAnimationsModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

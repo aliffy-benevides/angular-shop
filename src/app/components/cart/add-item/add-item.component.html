@@ -1,0 +1,21 @@
+<div class="add-item">
+    <button *ngIf="!HasItemInCart()"
+        (click)="AddItem()"
+        class="card-button-link">
+        Adicionar Item
+    </button>
+    <div *ngIf="HasItemInCart()"
+        class="count-items">
+        <button class="card-button-link"
+            (click)="RemoveItem()">
+            <i class="material-icons">remove</i>
+        </button>
+        <div>
+            {{ amount }}
+        </div>
+        <button class="card-button-link"
+            (click)="AddItem()">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
+</div>

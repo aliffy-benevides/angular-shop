@@ -1,5 +1,6 @@
 nav
     height: 100%
+    width: 180px
     background-color: rgb(204, 204, 204)
     padding: 16px
 
@@ -12,10 +13,25 @@ h1
     display: flex
     flex-flow: column nowrap
 
-.links a
-    text-decoration: none
-    color: rgb(126, 126, 126)
-    margin: 5px 0
+    a
+        text-decoration: none
+        color: rgb(126, 126, 126)
+        margin: 5px 0
+    
+    .cart-link
+        display: flex
+        align-items: center
+        .total-items
+            width: 20px
+            height: 20px
+            background-color: #000
+            color: #fff
+            border-radius: 50%
+
+            display: flex
+            justify-content: center
+            align-items: center
+
 
 button
     background-color: #000

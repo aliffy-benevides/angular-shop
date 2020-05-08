@@ -1,0 +1,15 @@
+<mat-card class="card mat-elevation-z4">
+    <mat-card-title class="card-title">
+        <h3>{{ product.name }}</h3>
+    </mat-card-title>
+    <mat-card-content class="content">
+        <p>Preço: {{ product.price | currency: 'BRL' }}</p>
+    </mat-card-content>
+    <mat-card-footer class="footer">
+        <app-add-item [id]="product.id"></app-add-item>
+        <button [routerLink]="['/', 'detail', product.id]"
+            class="card-button-link seeMoreButton">
+            Ver mais
+    </button>
+    </mat-card-footer>
+</mat-card>

@@ -5,9 +5,16 @@
         <a routerLink="/products">
             Produtos 
         </a>
-        <a routerLink="/cart">
-            Carrinho
-        </a>
+        <div class="cart-link">
+            <a routerLink="/cart">
+                Carrinho
+            </a>
+            <div *ngIf="totalItemsInCart > 0"
+                class="total-items">
+                {{ totalItemsInCart }}
+            </div>
+        </div>
+
     </div>
 
     <button>Entrar</button>
